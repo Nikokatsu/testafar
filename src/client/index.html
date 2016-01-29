@@ -1,0 +1,134 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <!-- Meta Properties -->
+    <meta charset="UTF-8">
+    <title>agar5</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADl0lEQVRYhcWXT4tcRRTFf1XVfyadzkyczkzDYNohDGFw4UJEXASxJasgYrIUURd+AvFLuBE/QEh2LiSrEMGVI1kK40aUgINMmhimO9hMMv8zXVUu7ns9r+vVm3TPBHLg0Q9e3Tqnbp+6dUt573mVKK2urvLs2vVJYnTykPl16dPudiYTMMG4OrAAXAKWkvfphHgTWAfWVpqtf4AesN/udtxpBZSAC8A7wCfA+wnxFGCCsYfANrAG3APurTRbD9rdzu5xBOqX+YtF32rAm8CXwA1gPkJahAPgAXALuANsFGWjSEAdeA/4Bln1mTGJQ/wH/AB8B3RiInQuRNL7dkL+4SnIARpIBr9GMphD6AENLAKfAx8A5TCgphVzukRNKYxSABx6z5ZzPLaDGMc54FPEoDdDT4QZmAauIIarhjNdLJVYNGVmtKaiFAYxxZRSNIxhuVxhzkRt0gC+ApZXmq3cirPvrYS8Ec5wqVRmRhvKSqEiDBqoKMWcNiyY6Oa6DFxDzB0VUEG225Uw8o1SmbNav3ALKKCsFOe1jmWiCnwEzBYJmAc+BmayAxrGUNcq6tYilJSioaNyLyOFLCdAA28B74YRs1pjokkvRpqJyF9RB5ZWmq3hetKXGpL66RFyY6gqPSH90cTndC5vZcRnOQFpua1kR7+m9USpz7GpqPQLZLZ/Ov888DrBvq8Sd/y4KBBfDwVo4DxSAYeo6aNCc1IUdBoj1SoVWQlHTWq8KFO82dkm4oF95FwfYsc77Cm6JQ/sxeN7ZLKgE+J+osymH5yHfe+L0vhCDLyn53Jnwx7SuIwISFWtIZkY4omzPD+BCAs89Y5dl4t8lPDkBPSB+8Cz7Ogt5+hPKMImcf8Ocqu3Ccd6ti9IBewCvybqDrJRPWvZsAP2vMNS6Gw88Nx7+tbycHAYG/IYuIssdohsrVxDupdFpO8bFvNN59h0jlljmFGaqlIYBQqF854BYtoNO8DGFe4APwK/tbudkdRkBWwnCpeAz5CKNXKi9K2lf+TTcXEA/Iz0h73wo/ni7MjhtwP8jRydi0g7Nm4jGsMW8BPwLfBnu9vJqQ8FeOAp8AfSUDaR0pk2P+PiAHgI3Aa+B/4KU5/iuLa8jpzfV5HmdBkp2RXyldMhW2sX2Wr3kb/zd6B/3G3pOAEgu2QK6WIWEF+k50b6VBLyzYR8HXH89su4GTlkVenKdPAte0880d1Qverb8Wn6jZeC/wHlRxL3oGkL4wAAAABJRU5ErkJggg==" />
+    <script src="/js/ads.js"></script>
+    <script type="text/javascript">
+      var _pop = _pop || [];
+      _pop.push(['siteId', 1055487]);
+      _pop.push(['minBid', 0.000000]);
+      _pop.push(['popundersPerIP', 0]);
+      _pop.push(['delayBetween', 0]);
+      _pop.push(['default', false]);
+      _pop.push(['defaultPerDay', 0]);
+      _pop.push(['topmostLayer', false]);
+      (function() {
+        var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+        var s = document.getElementsByTagName('script')[0]; 
+        pa.src = '//c1.popads.net/pop.js';
+        pa.onerror = function() {
+          var sa = document.createElement('script'); sa.type = 'text/javascript'; sa.async = true;
+          sa.src = '//c2.popads.net/pop.js';
+          s.parentNode.insertBefore(sa, s);
+        };
+        s.parentNode.insertBefore(pa, s);
+      })();
+    </script>
+</head>
+<body>
+    <div id="gameAreaWrapper">
+        <div id="status"><span class="title">Leaderboard</span></div>
+        <div class="chatbox" id="chatbox">
+            <ul id="chatList" class="chat-list"></ul>
+            <input id="chatInput" type="text" class="chat-input" placeholder="Press enter to chat..." maxlength="50" />
+        </div>
+        <div id="mobile">
+           <input type="image" id="split" class="split" src="img/split.png" alt="splitBtn">
+           <input type="image" id="feed" class="feed" src="img/feed.png" alt="feedBtn">
+        </div>
+        <canvas tabindex="1" id="cvs"></canvas>
+    </div>
+    <div id="startMenuWrapper">
+        <div id="startMenu">
+            <p>agar5</p>
+            <input type="text" tabindex="0" autofocus placeholder="Nick" id="playerNameInput" maxlength="25" />
+            
+            <select id="gamemode" onchange="if($(this).val()=='regular'){window.location.href='http://agar5.herokuapp.com'}else{window.location.href='http://agar5-beta.herokuapp.com'}" required="">
+                <option value="regular">Regular</option>
+                <option value="beta">Beta Testing</option>
+            </select>
+            
+            <b class="input-error">Nick must be alphanumeric characters only!</b>
+            
+            <button id="startButton">Play</button>
+            <button id="settingsButton"></button>
+            <br />
+            <div id="settings">
+                    <label><input id="visBord" type="checkbox" checked>Show border</label>
+                    <label><input id="showMass" type="checkbox" checked>Show mass</label>
+                    <label><input id="continuity" type="checkbox" checked>Continuity</label>
+                    <label><input id="roundFood" type="checkbox" checked>Rounded food</label>
+            </div>
+            <div id="instructions">
+                <hr>
+                <ul>
+                    <li>Move your mouse to control your cell.</li>
+                    <li>Eat other cells to grow bigger.</li>
+                    <li><small style="font-size:9px !important">user id: <span id="userid" style="font-size:9px !important"></span></small></li>
+                </ul>
+                <hr>
+            </div>
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- agar5 -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-5262307910181333"
+                 data-ad-slot="1520552209"
+                 data-ad-format="auto"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+            <div style="text-align:center;margin-top:5px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAYCAYAAADzoH0MAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2BpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYxIDY0LjE0MDk0OSwgMjAxMC8xMi8wNy0xMDo1NzowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0idXVpZDo4MjMwMDIwMzRDNjlERDExOUMxRjhFOTEyOTY1QjQ3MSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDoxRDY3QkQ2RkZDRUYxMUUxODMxRkIwQTVCNEJFMjcxNSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoxRDY3QkQ2RUZDRUYxMUUxODMxRkIwQTVCNEJFMjcxNSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M0IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjM3NThGMUREMDkyMDY4MTE5RTkyREVFMUYzQ0ZENEJFIiBzdFJlZjpkb2N1bWVudElEPSJ1dWlkOjgyMzAwMjAzNEM2OUREMTE5QzFGOEU5MTI5NjVCNDcxIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+waQE1AAAAPFJREFUeNqklMENgzAMRSHimN5ZpmNUYoAOwQAdowN0hd7LvT03A3And+pI35KVOiGBSMYhwi/fjolZ17U5YqY5OA4DuvBo29aSnIX8iV59abBMocfCQs7uScFCSTXkrwa1ELWINZDkKZRCssdYAtnsgy1IUSPlIMWdmIKYkm5j05qtSwWFHcXud7R4sA8AXgUg+EF+CBBIv5I/C4hXFSD4RtOZbIjYYc1li4jgJ9lE85HzhoqvdgqswNNHF+zyln9oNPpYhRHyXgjmHB2rQGpj8kKJCyOgkwicsKYCtOGhaBZAXwNgiNu8E7nae8ZPgAEAfyCtNNFvKYUAAAAASUVORK5CYII="><br>Help support agar5<br>by clicking the ad above.</div>
+        </div>
+    </div>
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script>
+    function getCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0; i<ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1);
+            if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+        }
+        return "";
+    }
+    
+    if(window.location.host.split('.')[0] == 'agar5'){
+        if (document.cookie.indexOf('uid') >= 0) {
+            $('#userid').text(getCookie('uid'));
+        }
+        else {
+            var rand = Math.floor((Math.random() * 99999) + 10000);
+            document.cookie = "uid=u"+rand+"; expires=Fri, 31 Dec 9999 23:59:59 GMT";
+            $('#userid').text(getCookie('uid'));
+        }
+    }
+    
+    if( window.canRunAds === undefined ){
+        alert('Please disable your adblocker for agar5, so we can continue providing agar5 for free.')
+    }
+    
+    //function doshare(){
+    //    alert('IMPORTANT: Please read before sharing! In order to get the 250 mass offer, someone who has NEVER player agar5 before needs to click on the link. If they have played agar5 before, it will not count towards the bonus. The 250 mass bonus will only work on \'Regular\' gamemode.');
+    //    $('#sharebtn').fadeOut();
+    //    
+    //    $('#s_email').attr("href","mailto:example@example.com?&subject=Check out this fun game I found!&body=Here's%20the%20link%3A%20https%3A//agar5.herokuapp.com%23"+getCookie('uid')+"%20.");
+    //    $('#s_fb').attr("href","https://www.facebook.com/sharer/sharer.php?u=https%3A//agar5.herokuapp.com%23"+getCookie('uid'));
+    //    $('#s_tw').attr("href","https://twitter.com/home?status=Challenge%20me%20to%20this%20fun%20online%20game%20I%20found!%20https%3A//agar5.herokuapp.com%23"+getCookie('uid'));
+    //    
+    //    $('#shareicns').fadeIn();
+    //}
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
